@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Método Textura Real — 365 Receitas Sem Açúcar, Glúten e Lactose</title>
+  <meta name="description"
+    content="Como comer bolo fofinho, pizza de massa macia e lasanha cremosa todos os dias — sem uma grama de açúcar, glúten ou lactose.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cocoa: {
+              DEFAULT: '#231F20',
+              muted: '#524B48',
+              light: '#6E6663'
+            },
+            olive: {
+              DEFAULT: '#1E5631',
+              dark: '#164225',
+              light: '#2A7343',
+              subtle: '#EBF3ED'
+            },
+            terracotta: {
+              DEFAULT: '#E65100',
+              hover: '#BF360C',
+              light: '#FF6D00'
+            },
+            cream: {
+              DEFAULT: '#FAF7F2',
+              card: '#FFFFFF',
+              darker: '#F3EFE8'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            heading: ['"Outfit"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF7F2;
+      color: #231F20;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .font-heading {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .pulse-cta {
+      animation: pulseGlow 2.3s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 0 0 0 rgba(230, 81, 0, 0.6);
+      }
+
+      70% {
+        box-shadow: 0 0 0 16px rgba(230, 81, 0, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(230, 81, 0, 0);
+      }
+    }
+
+    .pulse-olive {
+      animation: pulseOlive 2.3s infinite;
+    }
+
+    @keyframes pulseOlive {
+      0% {
+        box-shadow: 0 0 0 0 rgba(30, 86, 49, 0.6);
+      }
+
+      70% {
+        box-shadow: 0 0 0 16px rgba(30, 86, 49, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(30, 86, 49, 0);
+      }
+    }
+
+    /* Estilos do Modal de Upsell */
+    .modal-backdrop {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease-out;
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-box {
+      transform: scale(0.95) translateY(10px);
+      transition: transform 0.25s ease-out;
+    }
+
+    .modal-backdrop.active .modal-box {
+      transform: scale(1) translateY(0);
+    }
+  </style>
+</head>
+
+<body class="antialiased selection:bg-olive selection:text-white text-center">
+
+  <!-- 10. BARRA SUPERIOR COM TIMER REGRESSIVO (HORÁRIO DE BRASÍLIA) -->
+  <div
+    class="bg-[#B91C1C] text-white text-xs sm:text-sm py-2.5 px-4 font-bold tracking-wide flex items-center justify-center gap-2 shadow-md sticky top-0 z-40">
+    <span class="inline-flex items-center justify-center">
+      ⏱️ Último dia para garantir: <span id="countdown-timer"
+        class="font-mono text-amber-200 ml-1.5 font-black text-sm sm:text-base tracking-wider">00:00:00</span>
+    </span>
+  </div>
+
+  <!-- HERO SECTION (PRIMEIRA DOBRA) -->
+  <header class="relative overflow-hidden pt-10 pb-16 md:pt-16 md:pb-24 bg-white border-b border-stone-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center text-center">
+
+      <!-- 1. Headline Principal Limpa & Hierárquica -->
+      <h1
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-[3.15rem] font-black text-[#231F20] leading-[1.2] tracking-tight max-w-4xl mx-auto mb-6">
+        Como comer bolo fofinho, pizza de massa macia e lasanha cremosa todos os dias —
+        <span class="text-[#1E5631]">sem uma grama de açúcar, glúten ou lactose.</span>
+      </h1>
+
+      <!-- 2. Subheadline Clara e Espaçada -->
+      <p class="text-base sm:text-lg md:text-xl text-[#524B48] font-medium max-w-3xl mx-auto leading-relaxed mb-8">
+        Descubra o <strong class="text-[#231F20] font-bold">Método Textura Real</strong>: 365 receitas doces e salgadas
+        com ingredientes simples e baratos do seu mercado, que parecem comida tradicional de tão gostosas e ficam
+        prontas em poucos minutos.
+      </p>
+
+      <!-- 3. Botão Principal de CTA -->
+      <div class="w-full max-w-md mx-auto flex flex-col items-center">
+        <a href="#planos"
+          class="pulse-cta inline-flex items-center justify-center w-full py-4 sm:py-5 px-6 rounded-2xl bg-[#E65100] hover:bg-[#BF360C] text-white font-black text-base sm:text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 active:scale-[0.98] transition-all duration-300 ease-out uppercase tracking-wide gap-2.5">
+          <i class="fa-solid fa-arrow-down text-xl"></i>
+          <span>QUERO AS MINHAS RECEITAS AGORA</span>
+        </a>
+
+        <!-- 4. Pílula de Ancoragem de Preço e Micro-Garantias -->
+        <div class="mt-4 flex flex-col items-center gap-2.5 w-full">
+          <div
+            class="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 shadow-sm text-xs sm:text-sm">
+            <span class="text-stone-400 line-through font-medium">De R$ 86,90</span>
+            <span class="text-[#231F20] font-black text-sm sm:text-base">Por apenas <strong class="text-[#1E5631]">R$
+                10,90</strong></span>
+            <span class="bg-[#1E5631] text-white font-extrabold text-[10px] sm:text-xs px-2 py-0.5 rounded-full">87%
+              OFF</span>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-[#524B48] font-semibold">
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-[#1E5631]"></i> Envio imediato por
+              e-mail</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-[#1E5631]"></i> Pagamento
+              único</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-[#1E5631]"></i> 7 dias de
+              garantia</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Imagem do Mockup do Produto (PNG Transparente, Posicionado Logo Abaixo) -->
+      <div class="w-full flex items-center justify-center mt-8 bg-transparent">
+        <!-- INSERIR MOCKUP PNG TRANSPARENTE AQUI -->
+        <img src="mockup.png" alt="Mockup Método Textura Real — 365 Receitas Sem Açúcar, Glúten e Lactose"
+          class="w-full max-w-md md:max-w-lg mx-auto h-auto object-contain bg-transparent select-none drop-shadow-2xl transition-all duration-300 ease-out hover:scale-[1.02]">
+      </div>
+
+    </div>
+  </header>
+
+  <!-- SEÇÃO DORES COM EFEITO DE RELEVO INTERATIVO (HOVER) -->
+  <section class="py-16 sm:py-20 bg-[#FAF7F2] border-b border-stone-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
+
+      <div class="max-w-2xl mx-auto mb-12">
+        <span
+          class="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-rose-100 text-rose-800 inline-block mb-3">
+          Você se reconhece nisso?
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#231F20] leading-tight">
+          Se você precisa ou decidiu cortar o açúcar, o glúten ou a lactose, <span class="text-rose-700">você sabe
+            exatamente como é frustrante passar por isso:</span>
+        </h2>
+      </div>
+
+      <div class="w-full space-y-4">
+
+        <!-- Dor 1 -->
+        <div
+          class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 p-5 sm:p-6 rounded-2xl bg-white border border-stone-200 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div
+            class="w-11 h-11 rounded-xl bg-rose-50 text-rose-700 flex items-center justify-center flex-shrink-0 text-xl">
+            <i class="fa-solid fa-face-frown-open"></i>
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-bold text-[#231F20] mb-1">O tédio de comer sempre as mesmas coisas</h3>
+            <p class="text-sm sm:text-base text-[#524B48] leading-relaxed">
+              Depois de alguns dias, você olha para a geladeira e parece que só sobrou ovo, frango e salada sem graça.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dor 2 -->
+        <div
+          class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 p-5 sm:p-6 rounded-2xl bg-white border border-stone-200 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div
+            class="w-11 h-11 rounded-xl bg-rose-50 text-rose-700 flex items-center justify-center flex-shrink-0 text-xl">
+            <i class="fa-solid fa-cookie-bite"></i>
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-bold text-[#231F20] mb-1">Receitas saudáveis que ficam secas e com
+              gosto de papelão</h3>
+            <p class="text-sm sm:text-base text-[#524B48] leading-relaxed">
+              Você tenta fazer um bolo sem trigo ou um doce sem açúcar, gasta dinheiro e no final joga fora porque ficou
+              duro e ruim.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dor 3 -->
+        <div
+          class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 p-5 sm:p-6 rounded-2xl bg-white border border-stone-200 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div
+            class="w-11 h-11 rounded-xl bg-rose-50 text-rose-700 flex items-center justify-center flex-shrink-0 text-xl">
+            <i class="fa-solid fa-money-bill-wave"></i>
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-bold text-[#231F20] mb-1">Ingredientes caros e difíceis de achar</h3>
+            <p class="text-sm sm:text-base text-[#524B48] leading-relaxed">
+              A maioria das receitas na internet pede farinhas importadas e produtos naturais que custam uma fortuna.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dor 4 -->
+        <div
+          class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 p-5 sm:p-6 rounded-2xl bg-white border border-stone-200 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div
+            class="w-11 h-11 rounded-xl bg-rose-50 text-rose-700 flex items-center justify-center flex-shrink-0 text-xl">
+            <i class="fa-solid fa-users-slash"></i>
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-bold text-[#231F20] mb-1">A sensação de exclusão na hora das refeições
+            </h3>
+            <p class="text-sm sm:text-base text-[#524B48] leading-relaxed">
+              Enquanto todo mundo come pizza, lasanha ou uma sobremesa gostosa, você fica só olhando para não passar mal
+              ou sair da linha.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dor 5 -->
+        <div
+          class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 p-5 sm:p-6 rounded-2xl bg-white border border-stone-200 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div
+            class="w-11 h-11 rounded-xl bg-rose-50 text-rose-700 flex items-center justify-center flex-shrink-0 text-xl">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-bold text-[#231F20] mb-1">Falta de tempo e ideias na cozinha</h3>
+            <p class="text-sm sm:text-base text-[#524B48] leading-relaxed">
+              Chegar cansada e não saber o que preparar de rápido, gostoso e seguro para a sua saúde.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEÇÃO O QUE VOCÊ VAI RECEBER COM EFEITO DE RELEVO INTERATIVO -->
+  <section class="py-16 sm:py-20 bg-white border-b border-stone-200" id="conteudo">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
+
+      <div class="max-w-3xl mx-auto mb-12">
+        <span
+          class="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 inline-block mb-3">
+          Conteúdo Completo e Organizado
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#231F20] leading-tight mb-4">
+          O Que Você Vai Receber
+        </h2>
+        <p class="text-base sm:text-lg text-[#524B48]">
+          Ao garantir o seu acesso hoje, você recebe imediatamente no seu e-mail e área de membros a coleção digital
+          completa
+          <strong class="text-[#1E5631] font-bold">+365 Receitas Sem Açúcar, Glúten e Lactose</strong>, organizada para
+          facilitar o seu dia a dia:
+        </p>
+      </div>
+
+      <!-- Grid dos Módulos (Todos com estilo padronizado e hover em relevo) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-8">
+
+        <!-- Módulo 1 -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 flex flex-col justify-between items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div class="flex flex-col items-center">
+            <div
+              class="w-12 h-12 rounded-xl bg-[#EBF3ED] text-[#1E5631] flex items-center justify-center text-xl font-bold mb-4">
+              <i class="fa-solid fa-mug-hot"></i>
+            </div>
+            <span class="text-xs uppercase tracking-wider font-extrabold text-[#1E5631]">Módulo 1</span>
+            <h3 class="text-lg font-bold text-[#231F20] mt-1 mb-2">Cafés da Manhã e Lanches Rápidos</h3>
+            <p class="text-sm text-[#524B48] leading-relaxed">
+              Pães caseiros fofinhos, panquecas, crepiocas, muffins e ideias práticas para começar o dia com energia e
+              sem inchaço.
+            </p>
+          </div>
+          <div
+            class="mt-4 pt-3 border-t border-stone-100 w-full flex items-center justify-center gap-2 text-xs text-[#1E5631] font-semibold">
+            <i class="fa-solid fa-check"></i> Prontas em poucos minutos
+          </div>
+        </div>
+
+        <!-- Módulo 2 -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 flex flex-col justify-between items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-orange-500/40">
+          <div class="flex flex-col items-center">
+            <div
+              class="w-12 h-12 rounded-xl bg-[#FFF3E0] text-[#E65100] flex items-center justify-center text-xl font-bold mb-4">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <span class="text-xs uppercase tracking-wider font-extrabold text-[#E65100]">Módulo 2</span>
+            <h3 class="text-lg font-bold text-[#231F20] mt-1 mb-2">Almoços, Jantares e Massas</h3>
+            <p class="text-sm text-[#524B48] leading-relaxed">
+              Lasanha cremosa, pizza com massa macia, tortas salgadas, macarrão ao molho branco sem lactose e refeições
+              completas para toda a família.
+            </p>
+          </div>
+          <div
+            class="mt-4 pt-3 border-t border-stone-100 w-full flex items-center justify-center gap-2 text-xs text-[#E65100] font-semibold">
+            <i class="fa-solid fa-check"></i> Agrada toda a família
+          </div>
+        </div>
+
+        <!-- Módulo 3 -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 flex flex-col justify-between items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div class="flex flex-col items-center">
+            <div
+              class="w-12 h-12 rounded-xl bg-[#EBF3ED] text-[#1E5631] flex items-center justify-center text-xl font-bold mb-4">
+              <i class="fa-solid fa-cake-candles"></i>
+            </div>
+            <span class="text-xs uppercase tracking-wider font-extrabold text-[#1E5631]">Módulo 3</span>
+            <h3 class="text-lg font-bold text-[#231F20] mt-1 mb-2">Bolos e Quitandas de Padaria</h3>
+            <p class="text-sm text-[#524B48] leading-relaxed">
+              Receitas testadas com o Método Textura Real para fazer bolo de chocolate, cenoura, fubá e cookies
+              crocantes por fora e macios por dentro.
+            </p>
+          </div>
+          <div
+            class="mt-4 pt-3 border-t border-stone-100 w-full flex items-center justify-center gap-2 text-xs text-[#1E5631] font-semibold">
+            <i class="fa-solid fa-check"></i> Método Textura Real
+          </div>
+        </div>
+
+        <!-- Módulo 4 -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 flex flex-col justify-between items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-orange-500/40">
+          <div class="flex flex-col items-center">
+            <div
+              class="w-12 h-12 rounded-xl bg-[#FFF3E0] text-[#E65100] flex items-center justify-center text-xl font-bold mb-4">
+              <i class="fa-solid fa-ice-cream"></i>
+            </div>
+            <span class="text-xs uppercase tracking-wider font-extrabold text-[#E65100]">Módulo 4</span>
+            <h3 class="text-lg font-bold text-[#231F20] mt-1 mb-2">Sobremesas Cremosas Sem Açúcar</h3>
+            <p class="text-sm text-[#524B48] leading-relaxed">
+              Pudins, mousses, tortas doces e docinhos que matam a vontade de doce na hora sem picos de glicose.
+            </p>
+          </div>
+          <div
+            class="mt-4 pt-3 border-t border-stone-100 w-full flex items-center justify-center gap-2 text-xs text-[#E65100] font-semibold">
+            <i class="fa-solid fa-check"></i> Sem picos de glicose
+          </div>
+        </div>
+
+        <!-- Módulo 5 -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 flex flex-col justify-between items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div class="flex flex-col items-center">
+            <div
+              class="w-12 h-12 rounded-xl bg-[#EBF3ED] text-[#1E5631] flex items-center justify-center text-xl font-bold mb-4">
+              <i class="fa-solid fa-bowl-rice"></i>
+            </div>
+            <span class="text-xs uppercase tracking-wider font-extrabold text-[#1E5631]">Módulo 5</span>
+            <h3 class="text-lg font-bold text-[#231F20] mt-1 mb-2">Petiscos e Salgados Fit</h3>
+            <p class="text-sm text-[#524B48] leading-relaxed">
+              Opções crocantes e saborosas para o final de semana ou para receber visitas sem ninguém desconfiar que não
+              tem glúten nem leite.
+            </p>
+          </div>
+          <div
+            class="mt-4 pt-3 border-t border-stone-100 w-full flex items-center justify-center gap-2 text-xs text-[#1E5631] font-semibold">
+            <i class="fa-solid fa-check"></i> Perfeito para receber visitas
+          </div>
+        </div>
+
+        <!-- Card 6: Guia Visual Passo a Passo -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 flex flex-col justify-between items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-orange-500/40">
+          <div class="flex flex-col items-center">
+            <div
+              class="w-12 h-12 rounded-xl bg-[#FFF3E0] text-[#E65100] flex items-center justify-center text-xl font-bold mb-4">
+              <i class="fa-solid fa-camera"></i>
+            </div>
+            <span class="text-xs uppercase tracking-wider font-extrabold text-[#E65100]">Exclusivo</span>
+            <h3 class="text-lg font-bold text-[#231F20] mt-1 mb-2">Guia Visual Passo a Passo</h3>
+            <p class="text-sm text-[#524B48] leading-relaxed">
+              Todas as receitas com medidas caseiras simples, tempo de preparo exato e fotos reais para você acertar de
+              primeira sem desperdiçar comida.
+            </p>
+          </div>
+          <div
+            class="mt-4 pt-3 border-t border-stone-100 w-full flex items-center justify-center gap-2 text-xs text-[#E65100] font-semibold">
+            <i class="fa-solid fa-check"></i> Medidas simples (copos e colheres)
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEÇÃO PARA QUEM É COM EFEITO DE RELEVO INTERATIVO -->
+  <section class="py-16 sm:py-20 bg-[#FAF7F2] border-b border-stone-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
+
+      <div class="max-w-2xl mx-auto mb-12">
+        <span
+          class="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 inline-block mb-3">
+          Feito sob medida
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#231F20] leading-tight">
+          Para Quem É Este Livro Digital?
+        </h2>
+        <p class="text-base text-[#524B48] mt-2">
+          Este livro digital foi criado especialmente para:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+
+        <div
+          class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex flex-col items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div class="w-10 h-10 rounded-xl bg-[#EBF3ED] text-[#1E5631] flex items-center justify-center text-base mb-3">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <h3 class="text-base font-bold text-[#231F20] mb-1">Pessoas com intolerância ou alergia</h3>
+          <p class="text-sm text-[#524B48] leading-relaxed">
+            Ideal para celíacos, intolerantes à lactose ou quem sente estufamento e desconforto ao comer farinha branca
+            e leite.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex flex-col items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div class="w-10 h-10 rounded-xl bg-[#EBF3ED] text-[#1E5631] flex items-center justify-center text-base mb-3">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3 class="text-base font-bold text-[#231F20] mb-1">Diabéticos e pré-diabéticos</h3>
+          <p class="text-sm text-[#524B48] leading-relaxed">
+            Receitas seguras, livres de açúcar refinado, pensadas para manter o prazer de comer sem descontrolar a
+            glicemia.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex flex-col items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div class="w-10 h-10 rounded-xl bg-[#EBF3ED] text-[#1E5631] flex items-center justify-center text-base mb-3">
+            <i class="fa-solid fa-person-walking"></i>
+          </div>
+          <h3 class="text-base font-bold text-[#231F20] mb-1">Quem quer emagrecer ou desinflamar sem sofrer</h3>
+          <p class="text-sm text-[#524B48] leading-relaxed">
+            Perfeito para secar e ganhar mais disposição comendo comida de verdade e sem passar vontade.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex flex-col items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div class="w-10 h-10 rounded-xl bg-[#EBF3ED] text-[#1E5631] flex items-center justify-center text-base mb-3">
+            <i class="fa-solid fa-kitchen-set"></i>
+          </div>
+          <h3 class="text-base font-bold text-[#231F20] mb-1">Pessoas ocupadas e sem experiência na cozinha</h3>
+          <p class="text-sm text-[#524B48] leading-relaxed">
+            Passo a passo simples, rápido e direto ao ponto, mesmo que você nunca tenha feito um bolo na vida.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex flex-col items-center text-center md:col-span-2 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div class="w-10 h-10 rounded-xl bg-[#EBF3ED] text-[#1E5631] flex items-center justify-center text-base mb-3">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <h3 class="text-base font-bold text-[#231F20] mb-1">Quem cansou de gastar caro no mercado</h3>
+          <p class="text-sm text-[#524B48] leading-relaxed max-w-xl mx-auto">
+            Todas as receitas usam ingredientes acessíveis que você encontra em qualquer supermercado de bairro.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROVAS SOCIAIS / DEPOIMENTOS COM EFEITO DE RELEVO INTERATIVO -->
+  <section class="py-16 sm:py-20 bg-white border-b border-stone-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
+
+      <div class="max-w-2xl mx-auto mb-12">
+        <div class="flex items-center justify-center gap-1 text-amber-500 mb-2 text-lg">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#231F20] leading-tight">
+          Mais de 14.500 pessoas já transformaram suas refeições diárias
+        </h2>
+        <p class="text-base sm:text-lg text-[#1E5631] font-bold mt-2">
+          com as receitas da Chef Luana
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+
+        <!-- Depoimento 1 -->
+        <div
+          class="bg-[#FAF7F2] p-6 rounded-2xl shadow-sm border border-stone-200 flex flex-col justify-between items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div class="flex flex-col items-center">
+            <div class="flex items-center justify-center gap-1 text-amber-500 mb-3 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-[#524B48] italic text-sm sm:text-base leading-relaxed mb-6">
+              "Fiz o bolo de chocolate ontem e meu marido nem acreditou que não tinha farinha de trigo nem açúcar. Ficou
+              super fofinho e molhadinho! Valeu cada centavo."
+            </p>
+          </div>
+          <div class="flex flex-col items-center pt-4 border-t border-stone-200 w-full">
+            <p class="text-sm font-bold text-[#231F20]">Mariana S., 38 anos</p>
+            <p class="text-xs text-[#1E5631] font-semibold mt-0.5">Aluna Verificada</p>
+          </div>
+        </div>
+
+        <!-- Depoimento 2 -->
+        <div
+          class="bg-[#FAF7F2] p-6 rounded-2xl shadow-sm border border-stone-200 flex flex-col justify-between items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div class="flex flex-col items-center">
+            <div class="flex items-center justify-center gap-1 text-amber-500 mb-3 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-[#524B48] italic text-sm sm:text-base leading-relaxed mb-6">
+              "Eu sou intolerante à lactose e vivia passando mal ou comendo só coisas sem graça. A lasanha cremosa e a
+              pizza viraram rotina aqui em casa toda sexta-feira."
+            </p>
+          </div>
+          <div class="flex flex-col items-center pt-4 border-t border-stone-200 w-full">
+            <p class="text-sm font-bold text-[#231F20]">Cláudia R., 45 anos</p>
+            <p class="text-xs text-[#1E5631] font-semibold mt-0.5">Aluna Verificada</p>
+          </div>
+        </div>
+
+        <!-- Depoimento 3 -->
+        <div
+          class="bg-[#FAF7F2] p-6 rounded-2xl shadow-sm border border-stone-200 flex flex-col justify-between items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div class="flex flex-col items-center">
+            <div class="flex items-center justify-center gap-1 text-amber-500 mb-3 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-[#524B48] italic text-sm sm:text-base leading-relaxed mb-6">
+              "O melhor de tudo é que não precisa comprar aquelas farinhas caríssimas. Usei o que eu já tinha na
+              despensa e fiz um pão de frigideira maravilhoso em 10 minutos."
+            </p>
+          </div>
+          <div class="flex flex-col items-center pt-4 border-t border-stone-200 w-full">
+            <p class="text-sm font-bold text-[#231F20]">Patrícia M., 32 anos</p>
+            <p class="text-xs text-[#1E5631] font-semibold mt-0.5">Aluna Verificada</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. BÔNUS EXCLUSIVOS COM ANCORAGEM DE PREÇO E SOMA MATEMÁTICA -->
+  <section class="py-16 sm:py-20 bg-[#FAF7F2] border-b border-stone-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
+
+      <div class="max-w-2xl mx-auto mb-12">
+        <span
+          class="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-900 inline-block mb-3">
+          Presentes Especiais
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#231F20] leading-tight">
+          Bônus Exclusivos
+        </h2>
+        <p class="text-base text-[#524B48] mt-2">
+          Escolhendo o <strong>Plano Completo</strong> hoje, você leva gratuitamente 3 presentes especiais para acelerar
+          seus resultados na cozinha:
+        </p>
+      </div>
+
+      <div class="space-y-6 w-full">
+
+        <!-- Bônus 1 -->
+        <div
+          class="bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-stone-200 flex flex-col items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-amber-500/40">
+          <div
+            class="w-12 h-12 rounded-xl bg-amber-500 text-white flex items-center justify-center text-xl font-bold mb-3 shadow-sm">
+            <i class="fa-solid fa-dumbbell"></i>
+          </div>
+          <div class="flex items-center justify-center gap-2 mb-2 flex-wrap">
+            <span class="text-xs font-extrabold uppercase px-2.5 py-0.5 rounded bg-amber-100 text-amber-900">BÔNUS
+              1</span>
+            <span class="text-xs text-stone-400 line-through decoration-rose-500/80 decoration-2 font-medium">De R$
+              35,00</span>
+            <span
+              class="text-xs font-black text-[#1E5631] bg-emerald-100/90 border border-emerald-300 px-2.5 py-0.5 rounded-full">POR
+              R$ 0,00 (GRÁTIS)</span>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-[#231F20]">Livro 365 Receitas Proteicas Baratas</h3>
+          <p class="text-sm text-[#524B48] mt-2 max-w-xl">
+            <strong>Benefício:</strong> Mais 365 opções doces e salgadas ricas em proteína e econômicas para aumentar
+            sua saciedade, ajudar no ganho de massa magra e acabar de vez com a rotina do frango com ovo.
+          </p>
+          <p class="text-xs text-[#1E5631] mt-2 italic max-w-lg">
+            <strong>Por que existe:</strong> Para você ter opções extras de refeições rápidas pós-treino ou jantares
+            leves que sustentam por horas sem pesar no bolso.
+          </p>
+        </div>
+
+        <!-- Bônus 2 -->
+        <div
+          class="bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-stone-200 flex flex-col items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
+          <div
+            class="w-12 h-12 rounded-xl bg-[#1E5631] text-white flex items-center justify-center text-xl font-bold mb-3 shadow-sm">
+            <i class="fa-solid fa-arrows-rotate"></i>
+          </div>
+          <div class="flex items-center justify-center gap-2 mb-2 flex-wrap">
+            <span class="text-xs font-extrabold uppercase px-2.5 py-0.5 rounded bg-emerald-100 text-emerald-800">BÔNUS
+              2</span>
+            <span class="text-xs text-stone-400 line-through decoration-rose-500/80 decoration-2 font-medium">De R$
+              25,00</span>
+            <span
+              class="text-xs font-black text-[#1E5631] bg-emerald-100/90 border border-emerald-300 px-2.5 py-0.5 rounded-full">POR
+              R$ 0,00 (GRÁTIS)</span>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-[#231F20]">Guia de Substituições Inteligentes na Cozinha</h3>
+          <p class="text-sm text-[#524B48] mt-2 max-w-xl">
+            <strong>Benefício:</strong> Uma tabela prática que mostra exatamente como trocar farinha de trigo, leite,
+            creme de leite e açúcar em qualquer receita tradicional da sua família.
+          </p>
+          <p class="text-xs text-[#1E5631] mt-2 italic max-w-lg">
+            <strong>Por que existe:</strong> Para dar a você total liberdade culinária para adaptar até aquelas receitas
+            antigas de caderno que você ama.
+          </p>
+        </div>
+
+        <!-- Bônus 3 -->
+        <div
+          class="bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-stone-200 flex flex-col items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-orange-500/40">
+          <div
+            class="w-12 h-12 rounded-xl bg-[#E65100] text-white flex items-center justify-center text-xl font-bold mb-3 shadow-sm">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+          <div class="flex items-center justify-center gap-2 mb-2 flex-wrap">
+            <span class="text-xs font-extrabold uppercase px-2.5 py-0.5 rounded bg-orange-100 text-orange-900">BÔNUS
+              3</span>
+            <span class="text-xs text-stone-400 line-through decoration-rose-500/80 decoration-2 font-medium">De R$
+              57,00</span>
+            <span
+              class="text-xs font-black text-[#1E5631] bg-emerald-100/90 border border-emerald-300 px-2.5 py-0.5 rounded-full">POR
+              R$ 0,00 (GRÁTIS)</span>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-[#231F20]">Cardápio Semanal Anti-Inflamatório Pronto</h3>
+          <p class="text-sm text-[#524B48] mt-2 max-w-xl">
+            <strong>Benefício:</strong> 4 semanas completas de sugestões combinando café da manhã, almoço, lanche e
+            jantar usando as receitas do livro.
+          </p>
+          <p class="text-xs text-[#1E5631] mt-2 italic max-w-lg">
+            <strong>Por que existe:</strong> Para eliminar 100% da dúvida "o que eu vou fazer para comer hoje?" e
+            economizar tempo nas compras da semana.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- 4. BLOCO DE SOMA MATEMÁTICA E ANCORAGEM DE VALOR (R$ 117,00) -->
+      <div
+        class="mt-8 p-6 sm:p-8 rounded-3xl bg-white border-2 border-emerald-600/30 shadow-lg text-center max-w-3xl w-full mx-auto transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-2xl hover:border-emerald-600/60">
+        <div
+          class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-amber-900 bg-amber-100/90 border border-amber-300 px-3.5 py-1 rounded-full mb-3">
+          <i class="fa-solid fa-calculator text-amber-700"></i> Economia Real no Plano Completo
+        </div>
+        <p class="text-lg sm:text-xl md:text-2xl font-black text-[#231F20] leading-snug">
+          Valor total de todos os bônus: <span
+            class="line-through text-rose-600 font-black decoration-rose-600 decoration-2">R$ 117,00</span> —
+          Mas garantindo seu acesso HOJE, você leva todos eles <span
+            class="text-[#1E5631] font-black underline decoration-emerald-400 decoration-4">DE GRAÇA!</span>
+        </p>
+        <p class="text-xs sm:text-sm text-[#524B48] mt-2.5 font-medium">
+          R$ 35,00 (Bônus 1) + R$ 25,00 (Bônus 2) + R$ 57,00 (Bônus 3) = <strong class="text-[#231F20]">R$ 117,00 em
+            presentes</strong> inclusos sem nenhum custo extra.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. SEÇÃO DE PLANOS COM HOVER INTERATIVO EM RELEVO -->
+  <section class="py-16 sm:py-24 bg-white border-b border-stone-200" id="planos">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
+
+      <div class="max-w-2xl mx-auto mb-12">
+        <span
+          class="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 inline-block mb-3">
+          Oferta Especial
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#231F20] leading-tight">
+          Escolha a melhor opção para transformar a sua alimentação hoje:
+        </h2>
+        <p class="text-sm sm:text-base text-[#524B48] mt-2">
+          Pagamento único e 100% seguro. Acesso imediato no seu e-mail e área de membros.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch w-full max-w-4xl mx-auto">
+
+        <!-- PLANO BÁSICO (R$ 10,90) -->
+        <div
+          class="bg-[#FAF7F2] rounded-3xl p-7 sm:p-8 border border-stone-300 flex flex-col justify-between items-center text-center transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl hover:border-emerald-600/40">
+          <div class="w-full flex flex-col items-center">
+            <div class="mb-4">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-stone-500">Opção Essencial</span>
+              <h3 class="text-2xl font-extrabold text-[#231F20] mt-1">PLANO BÁSICO</h3>
+            </div>
+
+            <div class="mb-6 pb-6 border-b border-stone-200 w-full flex flex-col items-center">
+              <div class="flex items-baseline justify-center gap-1">
+                <span class="text-stone-500 text-sm font-semibold">R$</span>
+                <span class="text-4xl sm:text-5xl font-black text-[#231F20]">10,90</span>
+              </div>
+              <span class="text-xs text-stone-500 font-medium mt-1">Pagamento único • Sem mensalidades</span>
+            </div>
+
+            <ul class="space-y-3.5 text-sm text-[#524B48] mb-8 w-full text-left max-w-xs mx-auto">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-[#1E5631] mt-0.5"></i>
+                <span><strong>Livro Digital</strong> +365 Receitas Sem Açúcar, Glúten e Lactose</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-[#1E5631] mt-0.5"></i>
+                <span>Acesso imediato via E-mail e Área de Membros</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-[#1E5631] mt-0.5"></i>
+                <span>Garantia incondicional de 7 dias</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-stone-400">
+                <i class="fa-solid fa-circle-xmark text-stone-300 mt-0.5"></i>
+                <span>Não inclui os 3 Bônus Exclusivos</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="w-full">
+            <!-- Botão do Básico dispara o Popup de Upsell -->
+            <button type="button" onclick="openUpsellModal()"
+              class="inline-flex items-center justify-center w-full py-4 px-6 rounded-2xl bg-[#231F20] hover:bg-black text-white font-bold text-base transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl uppercase tracking-wide cursor-pointer shadow-md">
+              QUERO O PLANO BÁSICO
+            </button>
+            <p class="text-center text-xs text-stone-500 mt-3 flex items-center justify-center gap-1">
+              <i class="fa-solid fa-shield-halved text-stone-400"></i> Garantia de 7 dias
+            </p>
+          </div>
+        </div>
+
+        <!-- PLANO COMPLETO (MAIS VENDIDO / DESTAQUE - R$ 25,90) -->
+        <div
+          class="relative bg-white rounded-3xl p-7 sm:p-8 border-2 border-[#1E5631] shadow-xl flex flex-col justify-between items-center text-center transform md:-translate-y-2 transition-all duration-300 ease-out hover:-translate-y-3 hover:shadow-2xl hover:border-emerald-600">
+
+          <!-- Badge Mais Vendido -->
+          <div
+            class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#1E5631] text-white text-xs font-black uppercase tracking-wider py-1.5 px-5 rounded-full shadow-md flex items-center justify-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-crown text-amber-300"></i> MAIS ESCOLHIDO (94% DAS ALUNAS)
+          </div>
+
+          <div class="w-full flex flex-col items-center">
+            <div class="mb-4 mt-2">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-[#1E5631]">A Experiência Completa</span>
+              <h3 class="text-2xl font-extrabold text-[#231F20] mt-1">PLANO COMPLETO</h3>
+            </div>
+
+            <div class="mb-6 pb-6 border-b border-stone-200 w-full flex flex-col items-center">
+              <div class="flex items-baseline justify-center gap-1">
+                <span class="text-[#1E5631] text-sm font-semibold">Apenas R$</span>
+                <span class="text-4xl sm:text-5xl font-black text-[#1E5631]">25,90</span>
+              </div>
+              <span class="text-xs text-[#1E5631] font-bold bg-[#EBF3ED] px-2.5 py-0.5 rounded mt-1">Economia de R$
+                117,00 em bônus inclusos</span>
+            </div>
+
+            <ul class="space-y-3.5 text-sm text-[#231F20] mb-8 w-full text-left max-w-xs mx-auto">
+              <li class="flex items-start gap-2.5 font-semibold">
+                <i class="fa-solid fa-circle-check text-[#1E5631] text-base mt-0.5"></i>
+                <span>Tudo do Plano Básico (+365 Receitas)</span>
+              </li>
+              <li
+                class="flex items-start gap-2.5 font-bold text-[#1E5631] bg-[#EBF3ED] p-2.5 rounded-xl border border-emerald-200">
+                <i class="fa-solid fa-gift text-[#1E5631] text-base mt-0.5"></i>
+                <span>BÔNUS 1: Livro 365 Receitas Proteicas (730 receitas no total!)</span>
+              </li>
+              <li class="flex items-start gap-2.5 font-semibold">
+                <i class="fa-solid fa-gift text-amber-600 text-base mt-0.5"></i>
+                <span>BÔNUS 2: Guia de Substituições Inteligentes</span>
+              </li>
+              <li class="flex items-start gap-2.5 font-semibold">
+                <i class="fa-solid fa-gift text-[#E65100] text-base mt-0.5"></i>
+                <span>BÔNUS 3: Cardápio Semanal Anti-Inflamatório Pronto</span>
+              </li>
+              <li class="flex items-start gap-2.5 font-semibold">
+                <i class="fa-solid fa-infinity text-[#1E5631] text-base mt-0.5"></i>
+                <span>Acesso Vitalício + Atualizações Gratuitas</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-[#1E5631] text-base mt-0.5"></i>
+                <span>Garantia incondicional de 7 dias</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="w-full">
+            <!-- Botão Direto para Checkout Completo (R$ 25,90) -->
+            <a href="#checkout-completo-25"
+              class="pulse-cta inline-flex items-center justify-center w-full py-4 sm:py-5 px-6 rounded-2xl bg-[#E65100] hover:bg-[#BF360C] text-white font-black text-base sm:text-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl uppercase tracking-wide shadow-lg gap-2">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span>QUERO O PLANO COMPLETO POR R$ 25,90</span>
+            </a>
+            <p class="text-center text-xs text-stone-500 mt-3 flex items-center justify-center gap-1.5 font-medium">
+              <i class="fa-solid fa-bolt text-amber-600"></i> Acesso imediato no seu e-mail
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. SEÇÃO DE GARANTIA DE 7 DIAS (FLUIDA, SEM CAIXA QUADRADA, TOTALMENTE INTEGRADA AO FUNDO) -->
+  <section class="py-16 sm:py-24 bg-[#FAF7F2] border-b border-stone-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
+
+      <!-- Selo Visual Vetorial SVG de Certificado Dourado / Esmeralda -->
+      <div class="w-28 h-28 sm:w-32 sm:h-32 mb-6 drop-shadow-md select-none">
+        <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <defs>
+            <!-- Gradiente Dourado Real -->
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FDE68A" />
+              <stop offset="25%" stop-color="#F59E0B" />
+              <stop offset="50%" stop-color="#D97706" />
+              <stop offset="75%" stop-color="#FBBF24" />
+              <stop offset="100%" stop-color="#B45309" />
+            </linearGradient>
+            <!-- Gradiente Esmeralda -->
+            <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#22C55E" />
+              <stop offset="50%" stop-color="#15803D" />
+              <stop offset="100%" stop-color="#14532D" />
+            </linearGradient>
+            <filter id="shadowGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#78350F" flood-opacity="0.25" />
+            </filter>
+          </defs>
+
+          <!-- Círculo medalha exterior -->
+          <circle cx="80" cy="80" r="74" fill="url(#goldGrad)" filter="url(#shadowGlow)" />
+
+          <!-- Pontilhado de Segurança Certificada -->
+          <circle cx="80" cy="80" r="67" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-dasharray="3.5 2.5"
+            opacity="0.85" />
+
+          <!-- Círculo Interno Esmeralda Nobre -->
+          <circle cx="80" cy="80" r="61" fill="url(#emeraldGrad)" stroke="url(#goldGrad)" stroke-width="2.5" />
+
+          <!-- Estrelas de Avaliação Superior -->
+          <g fill="#FDE68A" transform="translate(80, 27) scale(0.65)">
+            <polygon points="0,-7 2.1,-2.3 7.3,-1.5 3.6,2.2 4.5,7.3 0,4.9 -4.5,7.3 -3.6,2.2 -7.3,-1.5 -2.1,-2.3"
+              transform="translate(-16, 0)" />
+            <polygon points="0,-7 2.1,-2.3 7.3,-1.5 3.6,2.2 4.5,7.3 0,4.9 -4.5,7.3 -3.6,2.2 -7.3,-1.5 -2.1,-2.3"
+              transform="translate(0, -3) scale(1.15)" />
+            <polygon points="0,-7 2.1,-2.3 7.3,-1.5 3.6,2.2 4.5,7.3 0,4.9 -4.5,7.3 -3.6,2.2 -7.3,-1.5 -2.1,-2.3"
+              transform="translate(16, 0)" />
+          </g>
+
+          <!-- Texto Superior -->
+          <text x="80" y="47" text-anchor="middle" fill="#FEF3C7" font-family="'Outfit', sans-serif" font-weight="900"
+            font-size="9" letter-spacing="1.5">GARANTIA</text>
+
+          <!-- Número "7" Central Imponente -->
+          <text x="80" y="86" text-anchor="middle" fill="#FFFFFF" font-family="'Outfit', sans-serif" font-weight="900"
+            font-size="42" letter-spacing="-1">7</text>
+
+          <!-- Texto "DIAS" -->
+          <text x="80" y="103" text-anchor="middle" fill="#FDE68A" font-family="'Outfit', sans-serif" font-weight="900"
+            font-size="12" letter-spacing="2">DIAS</text>
+
+          <!-- Faixa Inferior / Ribbon -->
+          <rect x="22" y="112" width="116" height="20" rx="10" fill="url(#goldGrad)" stroke="#FFFFFF"
+            stroke-width="1.2" />
+          <text x="80" y="126" text-anchor="middle" fill="#3E1A00" font-family="'Plus Jakarta Sans', sans-serif"
+            font-weight="900" font-size="8.5" letter-spacing="1">100% INCONDICIONAL</text>
+        </svg>
+      </div>
+
+      <!-- Subtítulo / Badge Discreto -->
+      <span
+        class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-100/90 text-[#1E5631] text-xs font-black uppercase tracking-wider mb-3 border border-emerald-300/80">
+        <i class="fa-solid fa-shield-halved"></i> GARANTIA BLINDADA DE SATISFAÇÃO
+      </span>
+
+      <!-- Título Forte -->
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-[#231F20] leading-tight mb-4 max-w-xl">
+        Risco Zero: Teste por 7 Dias Sem Compromisso
+      </h2>
+
+      <!-- Parágrafo Explicativo Centralizado e Espaçado -->
+      <p class="text-base sm:text-lg text-[#524B48] leading-relaxed max-w-2xl mx-auto mb-8">
+        Você tem 7 dias inteiros para baixar o livro, preparar as receitas na sua cozinha e comprovar o sabor e a maciez
+        com a sua família. Se você fizer qualquer receita e não amar a textura, o sabor, ou achar que o material não
+        facilitou sua rotina, basta enviar um <strong>único e-mail</strong> dentro do prazo. Devolvemos <strong>100% do
+          seu dinheiro</strong> na hora, sem perguntas, sem letras miúdas e sem qualquer burocracia.
+      </p>
+
+      <!-- 3 Selos Minimalistas e Alinhados (sem parecer caixas pesadas) -->
+      <div
+        class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm text-[#1E5631] font-bold">
+        <span class="flex items-center gap-2">
+          <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+          <span>Reembolso 100% Integral</span>
+        </span>
+        <span class="text-stone-300 hidden sm:inline">•</span>
+        <span class="flex items-center gap-2">
+          <i class="fa-solid fa-envelope-circle-check text-emerald-600 text-base"></i>
+          <span>Basta 1 Único E-mail</span>
+        </span>
+        <span class="text-stone-300 hidden sm:inline">•</span>
+        <span class="flex items-center gap-2">
+          <i class="fa-solid fa-lock text-emerald-600 text-base"></i>
+          <span>Zero Burocracia</span>
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. SEÇÃO DE DÚVIDAS (ACORDEÃO COM EFEITO DE RELEVO INTERATIVO) -->
+  <section class="py-16 sm:py-20 bg-white border-b border-stone-200" id="duvidas">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
+
+      <div class="max-w-2xl mx-auto mb-12">
+        <span
+          class="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-stone-100 text-[#524B48] inline-block mb-3">
+          Tire Suas Dúvidas
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#231F20] leading-tight">
+          Dúvidas Frequentes
+        </h2>
+      </div>
+
+      <div class="space-y-4 w-full text-left" id="faq-accordion">
+
+        <!-- Pergunta 1 -->
+        <div
+          class="border border-stone-200 rounded-2xl overflow-hidden bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md hover:border-emerald-600/40">
+          <button
+            class="w-full p-5 text-left font-bold text-[#231F20] flex items-center justify-between gap-4 bg-stone-50/60 hover:bg-stone-50 transition-colors cursor-pointer"
+            onclick="toggleAccordion(1)">
+            <span class="text-base sm:text-lg">1. Como vou receber o livro após a compra?</span>
+            <i class="fa-solid fa-chevron-down text-stone-500 transition-transform duration-200 text-sm"
+              id="faq-icon-1"></i>
+          </button>
+          <div class="p-5 pt-0 text-sm sm:text-base text-[#524B48] leading-relaxed border-t border-stone-100 hidden"
+            id="faq-content-1">
+            Assim que o pagamento for confirmado, você recebe o link de acesso imediatamente no seu e-mail cadastrado e
+            na sua área de membros. Você pode ler pelo celular, tablet, computador ou imprimir se preferir.
+          </div>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div
+          class="border border-stone-200 rounded-2xl overflow-hidden bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md hover:border-emerald-600/40">
+          <button
+            class="w-full p-5 text-left font-bold text-[#231F20] flex items-center justify-between gap-4 bg-stone-50/60 hover:bg-stone-50 transition-colors cursor-pointer"
+            onclick="toggleAccordion(2)">
+            <span class="text-base sm:text-lg">2. Os ingredientes das receitas são caros ou difíceis de
+              encontrar?</span>
+            <i class="fa-solid fa-chevron-down text-stone-500 transition-transform duration-200 text-sm"
+              id="faq-icon-2"></i>
+          </button>
+          <div class="p-5 pt-0 text-sm sm:text-base text-[#524B48] leading-relaxed border-t border-stone-100 hidden"
+            id="faq-content-2">
+            Não! Todas as receitas foram criadas pensando na realidade do dia a dia, usando ingredientes simples e
+            baratos que você encontra em qualquer supermercado comum.
+          </div>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <div
+          class="border border-stone-200 rounded-2xl overflow-hidden bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md hover:border-emerald-600/40">
+          <button
+            class="w-full p-5 text-left font-bold text-[#231F20] flex items-center justify-between gap-4 bg-stone-50/60 hover:bg-stone-50 transition-colors cursor-pointer"
+            onclick="toggleAccordion(3)">
+            <span class="text-base sm:text-lg">3. Eu não tenho muita prática na cozinha, vou conseguir fazer?</span>
+            <i class="fa-solid fa-chevron-down text-stone-500 transition-transform duration-200 text-sm"
+              id="faq-icon-3"></i>
+          </button>
+          <div class="p-5 pt-0 text-sm sm:text-base text-[#524B48] leading-relaxed border-t border-stone-100 hidden"
+            id="faq-content-3">
+            Com certeza. As receitas têm passo a passo direto, medidas caseiras (xícaras e colheres) e instruções claras
+            para dar certo mesmo se você for iniciante.
+          </div>
+        </div>
+
+        <!-- Pergunta 4 -->
+        <div
+          class="border border-stone-200 rounded-2xl overflow-hidden bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md hover:border-emerald-600/40">
+          <button
+            class="w-full p-5 text-left font-bold text-[#231F20] flex items-center justify-between gap-4 bg-stone-50/60 hover:bg-stone-50 transition-colors cursor-pointer"
+            onclick="toggleAccordion(4)">
+            <span class="text-base sm:text-lg">4. As receitas realmente não têm açúcar, glúten e lactose?</span>
+            <i class="fa-solid fa-chevron-down text-stone-500 transition-transform duration-200 text-sm"
+              id="faq-icon-4"></i>
+          </button>
+          <div class="p-5 pt-0 text-sm sm:text-base text-[#524B48] leading-relaxed border-t border-stone-100 hidden"
+            id="faq-content-4">
+            Sim, 100% das 365 receitas principais são livres de açúcar refinado, glúten e lactose, sendo perfeitas para
+            quem tem restrições ou busca uma vida mais saudável.
+          </div>
+        </div>
+
+        <!-- Pergunta 5 -->
+        <div
+          class="border border-stone-200 rounded-2xl overflow-hidden bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md hover:border-emerald-600/40">
+          <button
+            class="w-full p-5 text-left font-bold text-[#231F20] flex items-center justify-between gap-4 bg-stone-50/60 hover:bg-stone-50 transition-colors cursor-pointer"
+            onclick="toggleAccordion(5)">
+            <span class="text-base sm:text-lg">5. Tenho que pagar mensalidade?</span>
+            <i class="fa-solid fa-chevron-down text-stone-500 transition-transform duration-200 text-sm"
+              id="faq-icon-5"></i>
+          </button>
+          <div class="p-5 pt-0 text-sm sm:text-base text-[#524B48] leading-relaxed border-t border-stone-100 hidden"
+            id="faq-content-5">
+            Não. O pagamento é único e o acesso ao material é seu para sempre.
+          </div>
+        </div>
+
+        <!-- Pergunta 6 -->
+        <div
+          class="border border-stone-200 rounded-2xl overflow-hidden bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md hover:border-emerald-600/40">
+          <button
+            class="w-full p-5 text-left font-bold text-[#231F20] flex items-center justify-between gap-4 bg-stone-50/60 hover:bg-stone-50 transition-colors cursor-pointer"
+            onclick="toggleAccordion(6)">
+            <span class="text-base sm:text-lg">6. E se eu não gostar do conteúdo?</span>
+            <i class="fa-solid fa-chevron-down text-stone-500 transition-transform duration-200 text-sm"
+              id="faq-icon-6"></i>
+          </button>
+          <div class="p-5 pt-0 text-sm sm:text-base text-[#524B48] leading-relaxed border-t border-stone-100 hidden"
+            id="faq-content-6">
+            Você está protegido pela garantia incondicional de 7 dias. Se não ficar satisfeita, devolvemos todo o valor
+            pago.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA FINAL COM HOVER INTERATIVO -->
+  <section class="py-16 sm:py-24 bg-[#1E5631] text-white relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center text-center">
+
+      <span
+        class="px-4 py-1.5 rounded-full text-xs sm:text-sm font-extrabold uppercase tracking-wider bg-amber-400 text-amber-950 inline-block mb-6 shadow-md">
+        Última Oportunidade
+      </span>
+
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight max-w-3xl mx-auto mb-6">
+        Chegou a hora de voltar a sentir prazer em comer sem culpa e sem passar mal.
+      </h2>
+
+      <p class="text-base sm:text-lg md:text-xl text-emerald-100 max-w-2xl mx-auto leading-relaxed mb-8">
+        Não deixe para amanhã a chance de ter 365 receitas deliciosas, práticas e saudáveis na palma da sua mão.
+        Aproveite o valor promocional de hoje com todos os bônus liberados antes que a oferta saia do ar.
+      </p>
+
+      <!-- Botão CTA Final -->
+      <div class="w-full max-w-lg mx-auto flex flex-col items-center">
+        <a href="#planos"
+          class="pulse-cta inline-flex items-center justify-center w-full py-5 px-8 rounded-2xl bg-[#E65100] hover:bg-[#BF360C] text-white font-black text-lg sm:text-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl uppercase tracking-wide shadow-2xl gap-3">
+          <i class="fa-solid fa-lock text-xl"></i>
+          <span>QUERO AS MINHAS RECEITAS AGORA</span>
+        </a>
+
+        <!-- Selos de Segurança e Garantia -->
+        <div
+          class="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm text-emerald-200 font-medium">
+          <span class="flex items-center justify-center gap-1.5"><i
+              class="fa-solid fa-shield-halved text-emerald-400"></i> Compra 100% segura</span>
+          <span>•</span>
+          <span class="flex items-center justify-center gap-1.5"><i
+              class="fa-solid fa-envelope text-emerald-400 text-base"></i> Entrega imediata no seu e-mail</span>
+          <span>•</span>
+          <span class="flex items-center justify-center gap-1.5"><i class="fa-solid fa-medal text-emerald-400"></i>
+            Satisfação garantida</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. RODAPÉ (FOOTER LIMPO) -->
+  <footer class="bg-[#1A1A1A] text-stone-400 py-10 border-t border-stone-800 text-center text-xs">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col items-center">
+
+      <!-- Nome do Produto e Direitos -->
+      <p class="font-bold text-stone-200 text-sm mb-3">
+        Método Textura Real © 2026 - Todos os direitos reservados
+      </p>
+
+      <!-- Links Institucionais Centralizados -->
+      <div class="flex flex-wrap items-center justify-center gap-3 text-stone-400 font-medium">
+        <a href="#termos" class="hover:text-white transition-colors">Termos de Uso</a>
+        <span>|</span>
+        <a href="#privacidade" class="hover:text-white transition-colors">Políticas de Privacidade</a>
+        <span>|</span>
+        <a href="#contato" class="hover:text-white transition-colors">Contato</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- 8. MODAL / POPUP DE UPSELL / DESCONTO (PLANO BÁSICO -> PLANO COMPLETO POR R$ 20,90) -->
+  <div id="upsellModal"
+    class="modal-backdrop fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div
+      class="modal-box bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full relative shadow-2xl border-2 border-amber-500 flex flex-col items-center text-center">
+
+      <!-- Botão Fechar (X) -->
+      <button type="button" onclick="closeUpsellModal()"
+        class="absolute top-4 right-4 text-stone-400 hover:text-stone-700 w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center transition-colors cursor-pointer"
+        aria-label="Fechar">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <!-- Badge de Alerta/Presente -->
+      <div
+        class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-black uppercase tracking-wider mb-4">
+        <i class="fa-solid fa-gift text-amber-600"></i> ESPERE! OFERTA RELÂMPAGO EXCLUSIVA
+      </div>
+
+      <h3 class="text-2xl sm:text-3xl font-black text-[#231F20] leading-tight mb-2">
+        Leve o Plano Completo com Todos os Bônus por apenas <span class="text-[#1E5631]">R$ 20,90!</span>
+      </h3>
+
+      <p class="text-sm text-[#524B48] leading-relaxed mb-6">
+        Você está prestes a levar apenas o plano básico. Por <strong>apenas R$ 10,00 a mais</strong> (com <span
+          class="text-[#E65100] font-bold">R$ 5,00 de desconto</span> sobre o preço normal de R$ 25,90), você
+        desbloqueia <strong>mais 365 receitas extras + os 3 Bônus Exclusivos</strong> hoje!
+      </p>
+
+      <!-- Mini resumo dos bônus inclusos -->
+      <div
+        class="bg-[#FAF7F2] rounded-2xl p-4 w-full mb-6 border border-stone-200 text-left text-xs sm:text-sm text-[#231F20] space-y-2">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-check text-[#1E5631] font-bold"></i>
+          <span><strong>730 receitas no total</strong> (Livro Proteico incluso)</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-check text-[#1E5631] font-bold"></i>
+          <span>Guia de Substituições Inteligentes na Cozinha</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-check text-[#1E5631] font-bold"></i>
+          <span>Cardápio Semanal Anti-Inflamatório de 4 semanas</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-check text-[#1E5631] font-bold"></i>
+          <span>Acesso vitalício com atualizações gratuitas</span>
+        </div>
+      </div>
+
+      <!-- Botão Principal de Aceite da Oferta (R$ 20,90) -->
+      <a href="#checkout-completo-20"
+        class="pulse-cta inline-flex items-center justify-center w-full py-4 px-6 rounded-2xl bg-[#E65100] hover:bg-[#BF360C] text-white font-black text-base sm:text-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl uppercase tracking-wide shadow-lg gap-2 mb-4 text-center">
+        <i class="fa-solid fa-crown text-amber-300"></i>
+        <span>SIM! QUERO O PLANO COMPLETO POR R$ 20,90</span>
+      </a>
+
+      <!-- Link Discreto para Continuar Apenas com o Básico (R$ 10,90) -->
+      <a href="#checkout-basico-10" onclick="closeUpsellModal()"
+        class="text-xs text-stone-500 hover:text-stone-800 underline transition-colors font-medium">
+        Não, obrigado. Quero continuar apenas com o Plano Básico de R$ 10,90
+      </a>
+
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT: TIMER BRASÍLIA, ACORDEÃO EXCLUSIVO & MODAL -->
+  <script>
+    // 10. CRONÔMETRO SINCRONIZADO COM O HORÁRIO DE BRASÍLIA (America/Sao_Paulo)
+    function updateBrasiliaTimer() {
+      try {
+        const now = new Date();
+        // Formata os componentes para o fuso de Brasília
+        const brFormatter = new Intl.DateTimeFormat('pt-BR', {
+          timeZone: 'America/Sao_Paulo',
+          hour12: false,
+          hour: 'numeric',
+          minute: 'numeric',
+          second: 'numeric'
+        });
+
+        const parts = brFormatter.formatToParts(now);
+        let h = 0, m = 0, s = 0;
+
+        for (const p of parts) {
+          if (p.type === 'hour') h = parseInt(p.value, 10);
+          if (p.type === 'minute') m = parseInt(p.value, 10);
+          if (p.type === 'second') s = parseInt(p.value, 10);
+        }
+
+        // Segundos passados no dia atual em Brasília
+        const passedSeconds = h * 3600 + m * 60 + s;
+        // Segundos até a meia-noite (23:59:59 + 1 segundo)
+        let diffSeconds = 86400 - passedSeconds;
+        if (diffSeconds <= 0) diffSeconds = 86400;
+
+        const remHours = Math.floor(diffSeconds / 3600);
+        const remMinutes = Math.floor((diffSeconds % 3600) / 60);
+        const remSeconds = diffSeconds % 60;
+
+        const pad = (n) => String(n).padStart(2, '0');
+        const timerText = `${pad(remHours)}:${pad(remMinutes)}:${pad(remSeconds)}`;
+
+        const el = document.getElementById('countdown-timer');
+        if (el) {
+          el.textContent = timerText;
+        }
+      } catch (err) {
+        // Fallback caso Intl falhe
+        const now = new Date();
+        const diff = 86400 - (now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds());
+        const h = Math.floor(diff / 3600);
+        const m = Math.floor((diff % 3600) / 60);
+        const s = diff % 60;
+        const pad = (n) => String(n).padStart(2, '0');
+        const el = document.getElementById('countdown-timer');
+        if (el) el.textContent = `${pad(h)}:${pad(m)}:${pad(s)}`;
+      }
+    }
+
+    setInterval(updateBrasiliaTimer, 1000);
+    updateBrasiliaTimer();
+
+    // 7. ACORDEÃO EXCLUSIVO: APENAS 1 PERGUNTA ABERTA POR VEZ
+    function toggleAccordion(index) {
+      const totalFaqs = 6;
+      const targetContent = document.getElementById(`faq-content-${index}`);
+      const targetIcon = document.getElementById(`faq-icon-${index}`);
+
+      const isCurrentlyOpen = !targetContent.classList.contains('hidden');
+
+      // Fecha todos os itens
+      for (let i = 1; i <= totalFaqs; i++) {
+        const c = document.getElementById(`faq-content-${i}`);
+        const ic = document.getElementById(`faq-icon-${i}`);
+        if (c && ic) {
+          c.classList.add('hidden');
+          ic.style.transform = 'rotate(0deg)';
+        }
+      }
+
+      // Se o clicado estava fechado, abre-o
+      if (!isCurrentlyOpen) {
+        targetContent.classList.remove('hidden');
+        targetIcon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    // Abre a primeira pergunta por padrão ao carregar
+    document.addEventListener("DOMContentLoaded", function () {
+      toggleAccordion(1);
+    });
+
+    // 8. CONTROLE DO MODAL DE UPSELL / DESCONTO
+    function openUpsellModal(event) {
+      if (event) event.preventDefault();
+      const modal = document.getElementById('upsellModal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeUpsellModal() {
+      const modal = document.getElementById('upsellModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Fecha o modal ao clicar fora ou na tecla Esc
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeUpsellModal();
+    });
+
+    document.getElementById('upsellModal')?.addEventListener('click', function (e) {
+      if (e.target === this) closeUpsellModal();
+    });
+  </script>
+
+</body>
+
+</html>
