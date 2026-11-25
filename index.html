@@ -134,6 +134,32 @@
       pointer-events: none;
     }
 
+    /* MARQUEE CARROSSEL DE PRINTS WHATSAPP */
+    .whatsapp-marquee-container {
+      touch-action: pan-y;
+      user-select: none;
+      -webkit-user-select: none;
+      cursor: grab;
+    }
+
+    .whatsapp-marquee-container:active,
+    .whatsapp-marquee-container.cursor-grabbing {
+      cursor: grabbing;
+    }
+
+    .whatsapp-marquee-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      will-change: transform;
+    }
+
+    .whatsapp-marquee-track img {
+      -webkit-user-drag: none;
+      user-drag: none;
+      pointer-events: none;
+    }
+
     /* Estilos do Modal de Upsell */
     .modal-backdrop {
       opacity: 0;
@@ -858,87 +884,143 @@
     </div>
   </section>
 
-  <!-- PROVAS SOCIAIS / DEPOIMENTOS COM EFEITO DE RELEVO INTERATIVO -->
-  <section class="py-16 sm:py-20 bg-white border-b border-stone-200">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
-
-      <div class="max-w-2xl mx-auto mb-12">
-        <div class="flex items-center justify-center gap-1 text-amber-500 mb-2 text-lg">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#231F20] leading-tight">
-          Mais de 14.500 pessoas já transformaram suas refeições diárias
-        </h2>
-        <p class="text-base sm:text-lg text-[#1E5631] font-bold mt-2">
-          com as receitas e o Método Textura Real da Tia Lore
-        </p>
+  <!-- PROVAS SOCIAIS / DEPOIMENTOS DE ALUNAS NO WHATSAPP -->
+  <section class="py-16 sm:py-20 bg-white border-b border-stone-200 overflow-hidden relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center mb-8">
+      <div class="flex items-center justify-center gap-1 text-amber-500 mb-2 text-lg">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
       </div>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#231F20] leading-tight">
+        Mais de 14.500 pessoas já transformaram suas refeições diárias
+      </h2>
+      <p class="text-base sm:text-lg text-[#1E5631] font-bold mt-2">
+        com as receitas e o Método Textura Real da Tia Lore
+      </p>
+    </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+    <!-- Container do Carrossel Marquee de Prints WhatsApp com Suporte a Drag & Touch -->
+    <div class="relative w-full overflow-hidden whatsapp-marquee-container" id="whatsappMarqueeContainer">
+      <!-- Sombras suaves de fade nas bordas -->
+      <div class="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
 
-        <!-- Depoimento 1 -->
-        <div
-          class="bg-[#FAF7F2] p-6 rounded-2xl shadow-sm border border-stone-200 flex flex-col justify-between items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
-          <div class="flex flex-col items-center">
-            <div class="flex items-center justify-center gap-1 text-amber-500 mb-3 text-sm">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-[#524B48] italic text-sm sm:text-base leading-relaxed mb-6">
-              "Fiz o bolo de chocolate ontem e meu marido nem acreditou que não tinha farinha de trigo nem açúcar. Ficou
-              super fofinho e molhadinho! Valeu cada centavo."
-            </p>
-          </div>
-          <div class="flex flex-col items-center pt-4 border-t border-stone-200 w-full">
-            <p class="text-sm font-bold text-[#231F20]">Mariana S., 38 anos</p>
-            <p class="text-xs text-[#1E5631] font-semibold mt-0.5">Aluna Verificada</p>
+      <!-- Faixa Contínua de Cards -->
+      <div class="whatsapp-marquee-track py-3 pl-4 sm:pl-6" id="whatsappMarqueeTrack">
+        <!-- SET A -->
+        <!-- Print 1: Márcia (Bolo de chocolate molhadinho) -->
+        <div class="whatsapp-card relative flex-shrink-0 w-[280px] h-[480px] sm:w-[320px] sm:h-[490px] md:w-[340px] md:h-[500px] rounded-[18px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/90 bg-[#0c1317] flex items-center justify-center select-none group">
+          <img src="images/depoimentos/print-marcia-1.jpg" alt="Depoimento WhatsApp Márcia - Aluna Método Textura Real" class="w-full h-full object-contain bg-[#0c1317] select-none group-hover:scale-[1.02] transition-transform duration-500 ease-out" loading="lazy">
+          <div class="absolute top-3 right-3 bg-[#25D366]/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1 z-10 pointer-events-none">
+            <i class="fa-brands fa-whatsapp text-xs"></i>
+            <span>Aluna Verificada</span>
           </div>
         </div>
 
-        <!-- Depoimento 2 -->
-        <div
-          class="bg-[#FAF7F2] p-6 rounded-2xl shadow-sm border border-stone-200 flex flex-col justify-between items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
-          <div class="flex flex-col items-center">
-            <div class="flex items-center justify-center gap-1 text-amber-500 mb-3 text-sm">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-[#524B48] italic text-sm sm:text-base leading-relaxed mb-6">
-              "Eu sou intolerante à lactose e vivia passando mal ou comendo só coisas sem graça. A lasanha cremosa e a
-              pizza viraram rotina aqui em casa toda sexta-feira."
-            </p>
-          </div>
-          <div class="flex flex-col items-center pt-4 border-t border-stone-200 w-full">
-            <p class="text-sm font-bold text-[#231F20]">Cláudia R., 45 anos</p>
-            <p class="text-xs text-[#1E5631] font-semibold mt-0.5">Aluna Verificada</p>
+        <!-- Print 2: Cláudia (Pão caseiro fatiado) -->
+        <div class="whatsapp-card relative flex-shrink-0 w-[280px] h-[480px] sm:w-[320px] sm:h-[490px] md:w-[340px] md:h-[500px] rounded-[18px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/90 bg-[#0c1317] flex items-center justify-center select-none group">
+          <img src="images/depoimentos/print-claudia-1.jpg" alt="Depoimento WhatsApp Cláudia - Aluna Método Textura Real" class="w-full h-full object-contain bg-[#0c1317] select-none group-hover:scale-[1.02] transition-transform duration-500 ease-out" loading="lazy">
+          <div class="absolute top-3 right-3 bg-[#25D366]/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1 z-10 pointer-events-none">
+            <i class="fa-brands fa-whatsapp text-xs"></i>
+            <span>Aluna Verificada</span>
           </div>
         </div>
 
-        <!-- Depoimento 3 -->
-        <div
-          class="bg-[#FAF7F2] p-6 rounded-2xl shadow-sm border border-stone-200 flex flex-col justify-between items-center text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-600/40">
-          <div class="flex flex-col items-center">
-            <div class="flex items-center justify-center gap-1 text-amber-500 mb-3 text-sm">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-[#524B48] italic text-sm sm:text-base leading-relaxed mb-6">
-              "O melhor de tudo é que não precisa comprar aquelas farinhas caríssimas. Usei o que eu já tinha na
-              despensa e fiz um pão de frigideira maravilhoso em 10 minutos."
-            </p>
+        <!-- Print 3: Renata (Lasanha cremosa e digestão leve) -->
+        <div class="whatsapp-card relative flex-shrink-0 w-[280px] h-[480px] sm:w-[320px] sm:h-[490px] md:w-[340px] md:h-[500px] rounded-[18px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/90 bg-[#0c1317] flex items-center justify-center select-none group">
+          <img src="images/depoimentos/print-renata.jpg" alt="Depoimento WhatsApp Renata - Aluna Método Textura Real" class="w-full h-full object-contain bg-[#0c1317] select-none group-hover:scale-[1.02] transition-transform duration-500 ease-out" loading="lazy">
+          <div class="absolute top-3 right-3 bg-[#25D366]/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1 z-10 pointer-events-none">
+            <i class="fa-brands fa-whatsapp text-xs"></i>
+            <span>Aluna Verificada</span>
           </div>
-          <div class="flex flex-col items-center pt-4 border-t border-stone-200 w-full">
-            <p class="text-sm font-bold text-[#231F20]">Patrícia M., 32 anos</p>
-            <p class="text-xs text-[#1E5631] font-semibold mt-0.5">Aluna Verificada</p>
+        </div>
+
+        <!-- Print 4: Sueli (Entrega imediata e bolo de cenoura) -->
+        <div class="whatsapp-card relative flex-shrink-0 w-[280px] h-[480px] sm:w-[320px] sm:h-[490px] md:w-[340px] md:h-[500px] rounded-[18px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/90 bg-[#0c1317] flex items-center justify-center select-none group">
+          <img src="images/depoimentos/print-sueli.jpg" alt="Depoimento WhatsApp Sueli - Aluna Método Textura Real" class="w-full h-full object-contain bg-[#0c1317] select-none group-hover:scale-[1.02] transition-transform duration-500 ease-out" loading="lazy">
+          <div class="absolute top-3 right-3 bg-[#25D366]/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1 z-10 pointer-events-none">
+            <i class="fa-brands fa-whatsapp text-xs"></i>
+            <span>Aluna Verificada</span>
+          </div>
+        </div>
+
+        <!-- Print 5: Cláudia (Continuação - não esfarela) -->
+        <div class="whatsapp-card relative flex-shrink-0 w-[280px] h-[480px] sm:w-[320px] sm:h-[490px] md:w-[340px] md:h-[500px] rounded-[18px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/90 bg-[#0c1317] flex items-center justify-center select-none group">
+          <img src="images/depoimentos/print-claudia-2.jpg" alt="Depoimento WhatsApp Cláudia - Aluna Método Textura Real" class="w-full h-full object-contain bg-[#0c1317] select-none group-hover:scale-[1.02] transition-transform duration-500 ease-out" loading="lazy">
+          <div class="absolute top-3 right-3 bg-[#25D366]/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1 z-10 pointer-events-none">
+            <i class="fa-brands fa-whatsapp text-xs"></i>
+            <span>Aluna Verificada</span>
+          </div>
+        </div>
+
+        <!-- Print 6: Márcia (Continuação - marido comeu sem desconfiar) -->
+        <div class="whatsapp-card relative flex-shrink-0 w-[280px] h-[480px] sm:w-[320px] sm:h-[490px] md:w-[340px] md:h-[500px] rounded-[18px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/90 bg-[#0c1317] flex items-center justify-center select-none group">
+          <img src="images/depoimentos/print-marcia-2.jpg" alt="Depoimento WhatsApp Márcia - Aluna Método Textura Real" class="w-full h-full object-contain bg-[#0c1317] select-none group-hover:scale-[1.02] transition-transform duration-500 ease-out" loading="lazy">
+          <div class="absolute top-3 right-3 bg-[#25D366]/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1 z-10 pointer-events-none">
+            <i class="fa-brands fa-whatsapp text-xs"></i>
+            <span>Aluna Verificada</span>
+          </div>
+        </div>
+
+        <!-- SET B (Duplicado para Marquee Infinito 100% Contínuo) -->
+        <!-- Print 1 Duplicate -->
+        <div class="whatsapp-card relative flex-shrink-0 w-[280px] h-[480px] sm:w-[320px] sm:h-[490px] md:w-[340px] md:h-[500px] rounded-[18px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/90 bg-[#0c1317] flex items-center justify-center select-none group" aria-hidden="true">
+          <img src="images/depoimentos/print-marcia-1.jpg" alt="Depoimento WhatsApp Márcia - Aluna Método Textura Real" class="w-full h-full object-contain bg-[#0c1317] select-none group-hover:scale-[1.02] transition-transform duration-500 ease-out" loading="lazy">
+          <div class="absolute top-3 right-3 bg-[#25D366]/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1 z-10 pointer-events-none">
+            <i class="fa-brands fa-whatsapp text-xs"></i>
+            <span>Aluna Verificada</span>
+          </div>
+        </div>
+
+        <!-- Print 2 Duplicate -->
+        <div class="whatsapp-card relative flex-shrink-0 w-[280px] h-[480px] sm:w-[320px] sm:h-[490px] md:w-[340px] md:h-[500px] rounded-[18px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/90 bg-[#0c1317] flex items-center justify-center select-none group" aria-hidden="true">
+          <img src="images/depoimentos/print-claudia-1.jpg" alt="Depoimento WhatsApp Cláudia - Aluna Método Textura Real" class="w-full h-full object-contain bg-[#0c1317] select-none group-hover:scale-[1.02] transition-transform duration-500 ease-out" loading="lazy">
+          <div class="absolute top-3 right-3 bg-[#25D366]/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1 z-10 pointer-events-none">
+            <i class="fa-brands fa-whatsapp text-xs"></i>
+            <span>Aluna Verificada</span>
+          </div>
+        </div>
+
+        <!-- Print 3 Duplicate -->
+        <div class="whatsapp-card relative flex-shrink-0 w-[280px] h-[480px] sm:w-[320px] sm:h-[490px] md:w-[340px] md:h-[500px] rounded-[18px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/90 bg-[#0c1317] flex items-center justify-center select-none group" aria-hidden="true">
+          <img src="images/depoimentos/print-renata.jpg" alt="Depoimento WhatsApp Renata - Aluna Método Textura Real" class="w-full h-full object-contain bg-[#0c1317] select-none group-hover:scale-[1.02] transition-transform duration-500 ease-out" loading="lazy">
+          <div class="absolute top-3 right-3 bg-[#25D366]/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1 z-10 pointer-events-none">
+            <i class="fa-brands fa-whatsapp text-xs"></i>
+            <span>Aluna Verificada</span>
+          </div>
+        </div>
+
+        <!-- Print 4 Duplicate -->
+        <div class="whatsapp-card relative flex-shrink-0 w-[280px] h-[480px] sm:w-[320px] sm:h-[490px] md:w-[340px] md:h-[500px] rounded-[18px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/90 bg-[#0c1317] flex items-center justify-center select-none group" aria-hidden="true">
+          <img src="images/depoimentos/print-sueli.jpg" alt="Depoimento WhatsApp Sueli - Aluna Método Textura Real" class="w-full h-full object-contain bg-[#0c1317] select-none group-hover:scale-[1.02] transition-transform duration-500 ease-out" loading="lazy">
+          <div class="absolute top-3 right-3 bg-[#25D366]/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1 z-10 pointer-events-none">
+            <i class="fa-brands fa-whatsapp text-xs"></i>
+            <span>Aluna Verificada</span>
+          </div>
+        </div>
+
+        <!-- Print 5 Duplicate -->
+        <div class="whatsapp-card relative flex-shrink-0 w-[280px] h-[480px] sm:w-[320px] sm:h-[490px] md:w-[340px] md:h-[500px] rounded-[18px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/90 bg-[#0c1317] flex items-center justify-center select-none group" aria-hidden="true">
+          <img src="images/depoimentos/print-claudia-2.jpg" alt="Depoimento WhatsApp Cláudia - Aluna Método Textura Real" class="w-full h-full object-contain bg-[#0c1317] select-none group-hover:scale-[1.02] transition-transform duration-500 ease-out" loading="lazy">
+          <div class="absolute top-3 right-3 bg-[#25D366]/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1 z-10 pointer-events-none">
+            <i class="fa-brands fa-whatsapp text-xs"></i>
+            <span>Aluna Verificada</span>
+          </div>
+        </div>
+
+        <!-- Print 6 Duplicate -->
+        <div class="whatsapp-card relative flex-shrink-0 w-[280px] h-[480px] sm:w-[320px] sm:h-[490px] md:w-[340px] md:h-[500px] rounded-[18px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/90 bg-[#0c1317] flex items-center justify-center select-none group" aria-hidden="true">
+          <img src="images/depoimentos/print-marcia-2.jpg" alt="Depoimento WhatsApp Márcia - Aluna Método Textura Real" class="w-full h-full object-contain bg-[#0c1317] select-none group-hover:scale-[1.02] transition-transform duration-500 ease-out" loading="lazy">
+          <div class="absolute top-3 right-3 bg-[#25D366]/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1 z-10 pointer-events-none">
+            <i class="fa-brands fa-whatsapp text-xs"></i>
+            <span>Aluna Verificada</span>
           </div>
         </div>
 
       </div>
-
     </div>
   </section>
 
@@ -1761,6 +1843,112 @@
         if (!isPointerDown && !isHovered && setWidth > 0) {
           // Percorre o set completo de cards em 20 segundos (velocidade rápida e fluida)
           const speed = setWidth / 20;
+          currentX -= speed * Math.min(dt, 0.1);
+
+          if (currentX <= -setWidth) {
+            currentX += setWidth;
+          } else if (currentX > 0) {
+            currentX -= setWidth;
+          }
+          track.style.transform = 'translate3d(' + currentX.toFixed(2) + 'px, 0, 0)';
+        }
+
+        requestAnimationFrame(loop);
+      }
+
+      function startLoop() {
+        if (animStarted) return;
+        animStarted = true;
+        updateSetWidth();
+        lastTime = performance.now();
+        requestAnimationFrame(loop);
+      }
+
+      // Pausa suave ao passar o mouse (desktop)
+      container.addEventListener('mouseenter', function () {
+        isHovered = true;
+      });
+      container.addEventListener('mouseleave', function () {
+        isHovered = false;
+      });
+
+      // Suporte unificado a arrastar no celular (touch) e mouse (drag)
+      container.addEventListener('pointerdown', function (e) {
+        isPointerDown = true;
+        prevX = e.clientX;
+        container.classList.add('cursor-grabbing');
+      });
+
+      window.addEventListener('pointermove', function (e) {
+        if (!isPointerDown) return;
+        const delta = e.clientX - prevX;
+        prevX = e.clientX;
+        currentX += delta;
+
+        if (setWidth > 0) {
+          if (currentX <= -setWidth) currentX += setWidth;
+          if (currentX > 0) currentX -= setWidth;
+        }
+        track.style.transform = 'translate3d(' + currentX.toFixed(2) + 'px, 0, 0)';
+      });
+
+      function endDrag() {
+        if (isPointerDown) {
+          isPointerDown = false;
+          container.classList.remove('cursor-grabbing');
+        }
+      }
+
+      window.addEventListener('pointerup', endDrag);
+      window.addEventListener('pointercancel', endDrag);
+
+      // Inicia imediatamente e recalcula em load/resize
+      window.addEventListener('load', function () {
+        updateSetWidth();
+      });
+      window.addEventListener('resize', updateSetWidth);
+
+      // Inicialização imediata / fallback
+      setTimeout(startLoop, 100);
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        startLoop();
+      }
+    })();
+
+    // 12. CARROSSEL INFINITO (MARQUEE) DE PRINTS WHATSAPP
+    (function () {
+      const track = document.getElementById('whatsappMarqueeTrack');
+      const container = document.getElementById('whatsappMarqueeContainer');
+      if (!track || !container) return;
+
+      let currentX = 0;
+      let isPointerDown = false;
+      let prevX = 0;
+      let isHovered = false;
+      let setWidth = 0;
+      let lastTime = performance.now();
+      let animStarted = false;
+
+      function updateSetWidth() {
+        const cards = track.children;
+        if (!cards.length) return;
+        const halfCount = Math.floor(cards.length / 2);
+        let width = 0;
+        const style = window.getComputedStyle(track);
+        const gap = parseFloat(style.gap) || 24;
+        for (let i = 0; i < halfCount; i++) {
+          width += cards[i].offsetWidth + gap;
+        }
+        setWidth = width;
+      }
+
+      function loop(now) {
+        const dt = (now - lastTime) / 1000;
+        lastTime = now;
+
+        if (!isPointerDown && !isHovered && setWidth > 0) {
+          // Percorre o set completo em 28 segundos (velocidade moderada para leitura confortável)
+          const speed = setWidth / 28;
           currentX -= speed * Math.min(dt, 0.1);
 
           if (currentX <= -setWidth) {
