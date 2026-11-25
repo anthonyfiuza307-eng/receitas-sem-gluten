@@ -123,7 +123,7 @@
 
     .recipes-marquee-track {
       display: flex;
-      gap: 1.25rem;
+      gap: 24px;
       width: max-content;
       will-change: transform;
     }
@@ -574,272 +574,202 @@
       <div class="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-20 bg-gradient-to-l from-[#F8F5F0] to-transparent z-10"></div>
 
       <!-- Faixa Contínua de Cards -->
-      <div class="recipes-marquee-track py-2 pl-4 sm:pl-6" id="recipesMarqueeTrack">
+      <div class="recipes-marquee-track py-4 pl-4 sm:pl-6" id="recipesMarqueeTrack">
         <!-- SET A -->
         <!-- Card 1: Bolo de Chocolate Fofinho -->
-        <div class="recipes-card relative flex-shrink-0 w-[240px] sm:w-[270px] md:w-[300px] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-stone-200/80 bg-white">
-          <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-            <img src="images/receitas/bolo-chocolate.jpg" alt="Bolo de Chocolate Fofinho" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy">
-            <div class="absolute top-3 left-3 bg-[#1E5631]/90 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1.5 tracking-wide z-10">
-              <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
-              <span>Zero Açúcar • Glúten • Lactose</span>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3.5 sm:p-4 pt-10 text-left">
-              <span class="inline-block text-[10px] sm:text-[11px] font-bold text-amber-300 uppercase tracking-wider mb-0.5">
-                Receita Exclusiva
-              </span>
-              <h3 class="text-white font-extrabold text-sm sm:text-base leading-tight drop-shadow-sm">
-                Bolo de Chocolate Fofinho
-              </h3>
-            </div>
+        <div class="recipes-card relative flex-shrink-0 w-[280px] h-[370px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[20px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-stone-200/90 bg-stone-900 select-none">
+          <img src="images/receitas/bolo-chocolate.jpg" alt="Bolo de Chocolate Fofinho" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+          <div class="absolute top-3.5 left-3.5 bg-[#1E5631]/85 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide z-10">
+            <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
+            <span>Zero Açúcar • Glúten • Lactose</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-6 pt-16 text-left pointer-events-none">
+            <h3 class="text-white font-bold text-lg sm:text-[20px] leading-snug drop-shadow-md">
+              Bolo de Chocolate Fofinho
+            </h3>
           </div>
         </div>
 
         <!-- Card 2: Pão Caseiro que Não Esfarela -->
-        <div class="recipes-card relative flex-shrink-0 w-[240px] sm:w-[270px] md:w-[300px] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-stone-200/80 bg-white">
-          <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-            <img src="images/receitas/pao-caseiro.jpg" alt="Pão Caseiro que Não Esfarela" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy">
-            <div class="absolute top-3 left-3 bg-[#1E5631]/90 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1.5 tracking-wide z-10">
-              <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
-              <span>Zero Açúcar • Glúten • Lactose</span>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3.5 sm:p-4 pt-10 text-left">
-              <span class="inline-block text-[10px] sm:text-[11px] font-bold text-amber-300 uppercase tracking-wider mb-0.5">
-                Massa Perfeita
-              </span>
-              <h3 class="text-white font-extrabold text-sm sm:text-base leading-tight drop-shadow-sm">
-                Pão Caseiro que Não Esfarela
-              </h3>
-            </div>
+        <div class="recipes-card relative flex-shrink-0 w-[280px] h-[370px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[20px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-stone-200/90 bg-stone-900 select-none">
+          <img src="images/receitas/pao-caseiro.jpg" alt="Pão Caseiro que Não Esfarela" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+          <div class="absolute top-3.5 left-3.5 bg-[#1E5631]/85 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide z-10">
+            <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
+            <span>Zero Açúcar • Glúten • Lactose</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-6 pt-16 text-left pointer-events-none">
+            <h3 class="text-white font-bold text-lg sm:text-[20px] leading-snug drop-shadow-md">
+              Pão Caseiro que Não Esfarela
+            </h3>
           </div>
         </div>
 
         <!-- Card 3: Torta Salgada de Liquidificador -->
-        <div class="recipes-card relative flex-shrink-0 w-[240px] sm:w-[270px] md:w-[300px] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-stone-200/80 bg-white">
-          <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-            <img src="images/receitas/torta-salgada.jpg" alt="Torta Salgada de Liquidificador" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy">
-            <div class="absolute top-3 left-3 bg-[#1E5631]/90 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1.5 tracking-wide z-10">
-              <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
-              <span>Zero Açúcar • Glúten • Lactose</span>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3.5 sm:p-4 pt-10 text-left">
-              <span class="inline-block text-[10px] sm:text-[11px] font-bold text-amber-300 uppercase tracking-wider mb-0.5">
-                Prática & Cremosa
-              </span>
-              <h3 class="text-white font-extrabold text-sm sm:text-base leading-tight drop-shadow-sm">
-                Torta Salgada de Liquidificador
-              </h3>
-            </div>
+        <div class="recipes-card relative flex-shrink-0 w-[280px] h-[370px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[20px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-stone-200/90 bg-stone-900 select-none">
+          <img src="images/receitas/torta-salgada.jpg" alt="Torta Salgada de Liquidificador" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+          <div class="absolute top-3.5 left-3.5 bg-[#1E5631]/85 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide z-10">
+            <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
+            <span>Zero Açúcar • Glúten • Lactose</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-6 pt-16 text-left pointer-events-none">
+            <h3 class="text-white font-bold text-lg sm:text-[20px] leading-snug drop-shadow-md">
+              Torta Salgada de Liquidificador
+            </h3>
           </div>
         </div>
 
         <!-- Card 4: Bolo de Cenoura com Chocolate -->
-        <div class="recipes-card relative flex-shrink-0 w-[240px] sm:w-[270px] md:w-[300px] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-stone-200/80 bg-white">
-          <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-            <img src="images/receitas/bolo-cenoura.jpg" alt="Bolo de Cenoura com Chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy">
-            <div class="absolute top-3 left-3 bg-[#1E5631]/90 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1.5 tracking-wide z-10">
-              <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
-              <span>Zero Açúcar • Glúten • Lactose</span>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3.5 sm:p-4 pt-10 text-left">
-              <span class="inline-block text-[10px] sm:text-[11px] font-bold text-amber-300 uppercase tracking-wider mb-0.5">
-                Cobertura Irresistível
-              </span>
-              <h3 class="text-white font-extrabold text-sm sm:text-base leading-tight drop-shadow-sm">
-                Bolo de Cenoura com Chocolate
-              </h3>
-            </div>
+        <div class="recipes-card relative flex-shrink-0 w-[280px] h-[370px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[20px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-stone-200/90 bg-stone-900 select-none">
+          <img src="images/receitas/bolo-cenoura.jpg" alt="Bolo de Cenoura com Chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+          <div class="absolute top-3.5 left-3.5 bg-[#1E5631]/85 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide z-10">
+            <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
+            <span>Zero Açúcar • Glúten • Lactose</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-6 pt-16 text-left pointer-events-none">
+            <h3 class="text-white font-bold text-lg sm:text-[20px] leading-snug drop-shadow-md">
+              Bolo de Cenoura com Chocolate
+            </h3>
           </div>
         </div>
 
         <!-- Card 5: Pão de Iogurte Super Macio -->
-        <div class="recipes-card relative flex-shrink-0 w-[240px] sm:w-[270px] md:w-[300px] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-stone-200/80 bg-white">
-          <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-            <img src="images/receitas/pao-iogurte.jpg" alt="Pão de Iogurte Super Macio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy">
-            <div class="absolute top-3 left-3 bg-[#1E5631]/90 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1.5 tracking-wide z-10">
-              <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
-              <span>Zero Açúcar • Glúten • Lactose</span>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3.5 sm:p-4 pt-10 text-left">
-              <span class="inline-block text-[10px] sm:text-[11px] font-bold text-amber-300 uppercase tracking-wider mb-0.5">
-                Cresce e Fica Fofinho
-              </span>
-              <h3 class="text-white font-extrabold text-sm sm:text-base leading-tight drop-shadow-sm">
-                Pão de Iogurte Super Macio
-              </h3>
-            </div>
+        <div class="recipes-card relative flex-shrink-0 w-[280px] h-[370px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[20px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-stone-200/90 bg-stone-900 select-none">
+          <img src="images/receitas/pao-iogurte.jpg" alt="Pão de Iogurte Super Macio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+          <div class="absolute top-3.5 left-3.5 bg-[#1E5631]/85 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide z-10">
+            <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
+            <span>Zero Açúcar • Glúten • Lactose</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-6 pt-16 text-left pointer-events-none">
+            <h3 class="text-white font-bold text-lg sm:text-[20px] leading-snug drop-shadow-md">
+              Pão de Iogurte Super Macio
+            </h3>
           </div>
         </div>
 
         <!-- Card 6: Torta Cremosa de Maracujá e Chocolate -->
-        <div class="recipes-card relative flex-shrink-0 w-[240px] sm:w-[270px] md:w-[300px] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-stone-200/80 bg-white">
-          <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-            <img src="images/receitas/torta-maracuja.jpg" alt="Torta Cremosa de Maracujá e Chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy">
-            <div class="absolute top-3 left-3 bg-[#1E5631]/90 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1.5 tracking-wide z-10">
-              <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
-              <span>Zero Açúcar • Glúten • Lactose</span>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3.5 sm:p-4 pt-10 text-left">
-              <span class="inline-block text-[10px] sm:text-[11px] font-bold text-amber-300 uppercase tracking-wider mb-0.5">
-                Sobremesa dos Deuses
-              </span>
-              <h3 class="text-white font-extrabold text-sm sm:text-base leading-tight drop-shadow-sm">
-                Torta Cremosa de Maracujá e Chocolate
-              </h3>
-            </div>
+        <div class="recipes-card relative flex-shrink-0 w-[280px] h-[370px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[20px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-stone-200/90 bg-stone-900 select-none">
+          <img src="images/receitas/torta-maracuja.jpg" alt="Torta Cremosa de Maracujá e Chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+          <div class="absolute top-3.5 left-3.5 bg-[#1E5631]/85 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide z-10">
+            <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
+            <span>Zero Açúcar • Glúten • Lactose</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-6 pt-16 text-left pointer-events-none">
+            <h3 class="text-white font-bold text-lg sm:text-[20px] leading-snug drop-shadow-md">
+              Torta Cremosa de Maracujá e Chocolate
+            </h3>
           </div>
         </div>
 
         <!-- Card 7: Torta Holandesa Sem Glúten -->
-        <div class="recipes-card relative flex-shrink-0 w-[240px] sm:w-[270px] md:w-[300px] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-stone-200/80 bg-white">
-          <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-            <img src="images/receitas/torta-chocolate.jpg" alt="Torta Holandesa Sem Glúten" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy">
-            <div class="absolute top-3 left-3 bg-[#1E5631]/90 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1.5 tracking-wide z-10">
-              <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
-              <span>Zero Açúcar • Glúten • Lactose</span>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3.5 sm:p-4 pt-10 text-left">
-              <span class="inline-block text-[10px] sm:text-[11px] font-bold text-amber-300 uppercase tracking-wider mb-0.5">
-                Zero Açúcar
-              </span>
-              <h3 class="text-white font-extrabold text-sm sm:text-base leading-tight drop-shadow-sm">
-                Torta Holandesa Sem Glúten
-              </h3>
-            </div>
+        <div class="recipes-card relative flex-shrink-0 w-[280px] h-[370px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[20px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-stone-200/90 bg-stone-900 select-none">
+          <img src="images/receitas/torta-chocolate.jpg" alt="Torta Holandesa Sem Glúten" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+          <div class="absolute top-3.5 left-3.5 bg-[#1E5631]/85 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide z-10">
+            <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
+            <span>Zero Açúcar • Glúten • Lactose</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-6 pt-16 text-left pointer-events-none">
+            <h3 class="text-white font-bold text-lg sm:text-[20px] leading-snug drop-shadow-md">
+              Torta Holandesa Sem Glúten
+            </h3>
           </div>
         </div>
 
         <!-- SET B (Duplicado para Marquee Infinito 100% Contínuo) -->
         <!-- Card 1 Duplicate -->
-        <div class="recipes-card relative flex-shrink-0 w-[240px] sm:w-[270px] md:w-[300px] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-stone-200/80 bg-white" aria-hidden="true">
-          <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-            <img src="images/receitas/bolo-chocolate.jpg" alt="Bolo de Chocolate Fofinho" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy">
-            <div class="absolute top-3 left-3 bg-[#1E5631]/90 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1.5 tracking-wide z-10">
-              <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
-              <span>Zero Açúcar • Glúten • Lactose</span>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3.5 sm:p-4 pt-10 text-left">
-              <span class="inline-block text-[10px] sm:text-[11px] font-bold text-amber-300 uppercase tracking-wider mb-0.5">
-                Receita Exclusiva
-              </span>
-              <h3 class="text-white font-extrabold text-sm sm:text-base leading-tight drop-shadow-sm">
-                Bolo de Chocolate Fofinho
-              </h3>
-            </div>
+        <div class="recipes-card relative flex-shrink-0 w-[280px] h-[370px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[20px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-stone-200/90 bg-stone-900 select-none" aria-hidden="true">
+          <img src="images/receitas/bolo-chocolate.jpg" alt="Bolo de Chocolate Fofinho" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+          <div class="absolute top-3.5 left-3.5 bg-[#1E5631]/85 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide z-10">
+            <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
+            <span>Zero Açúcar • Glúten • Lactose</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-6 pt-16 text-left pointer-events-none">
+            <h3 class="text-white font-bold text-lg sm:text-[20px] leading-snug drop-shadow-md">
+              Bolo de Chocolate Fofinho
+            </h3>
           </div>
         </div>
 
         <!-- Card 2 Duplicate -->
-        <div class="recipes-card relative flex-shrink-0 w-[240px] sm:w-[270px] md:w-[300px] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-stone-200/80 bg-white" aria-hidden="true">
-          <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-            <img src="images/receitas/pao-caseiro.jpg" alt="Pão Caseiro que Não Esfarela" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy">
-            <div class="absolute top-3 left-3 bg-[#1E5631]/90 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1.5 tracking-wide z-10">
-              <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
-              <span>Zero Açúcar • Glúten • Lactose</span>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3.5 sm:p-4 pt-10 text-left">
-              <span class="inline-block text-[10px] sm:text-[11px] font-bold text-amber-300 uppercase tracking-wider mb-0.5">
-                Massa Perfeita
-              </span>
-              <h3 class="text-white font-extrabold text-sm sm:text-base leading-tight drop-shadow-sm">
-                Pão Caseiro que Não Esfarela
-              </h3>
-            </div>
+        <div class="recipes-card relative flex-shrink-0 w-[280px] h-[370px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[20px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-stone-200/90 bg-stone-900 select-none" aria-hidden="true">
+          <img src="images/receitas/pao-caseiro.jpg" alt="Pão Caseiro que Não Esfarela" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+          <div class="absolute top-3.5 left-3.5 bg-[#1E5631]/85 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide z-10">
+            <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
+            <span>Zero Açúcar • Glúten • Lactose</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-6 pt-16 text-left pointer-events-none">
+            <h3 class="text-white font-bold text-lg sm:text-[20px] leading-snug drop-shadow-md">
+              Pão Caseiro que Não Esfarela
+            </h3>
           </div>
         </div>
 
         <!-- Card 3 Duplicate -->
-        <div class="recipes-card relative flex-shrink-0 w-[240px] sm:w-[270px] md:w-[300px] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-stone-200/80 bg-white" aria-hidden="true">
-          <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-            <img src="images/receitas/torta-salgada.jpg" alt="Torta Salgada de Liquidificador" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy">
-            <div class="absolute top-3 left-3 bg-[#1E5631]/90 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1.5 tracking-wide z-10">
-              <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
-              <span>Zero Açúcar • Glúten • Lactose</span>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3.5 sm:p-4 pt-10 text-left">
-              <span class="inline-block text-[10px] sm:text-[11px] font-bold text-amber-300 uppercase tracking-wider mb-0.5">
-                Prática & Cremosa
-              </span>
-              <h3 class="text-white font-extrabold text-sm sm:text-base leading-tight drop-shadow-sm">
-                Torta Salgada de Liquidificador
-              </h3>
-            </div>
+        <div class="recipes-card relative flex-shrink-0 w-[280px] h-[370px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[20px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-stone-200/90 bg-stone-900 select-none" aria-hidden="true">
+          <img src="images/receitas/torta-salgada.jpg" alt="Torta Salgada de Liquidificador" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+          <div class="absolute top-3.5 left-3.5 bg-[#1E5631]/85 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide z-10">
+            <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
+            <span>Zero Açúcar • Glúten • Lactose</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-6 pt-16 text-left pointer-events-none">
+            <h3 class="text-white font-bold text-lg sm:text-[20px] leading-snug drop-shadow-md">
+              Torta Salgada de Liquidificador
+            </h3>
           </div>
         </div>
 
         <!-- Card 4 Duplicate -->
-        <div class="recipes-card relative flex-shrink-0 w-[240px] sm:w-[270px] md:w-[300px] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-stone-200/80 bg-white" aria-hidden="true">
-          <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-            <img src="images/receitas/bolo-cenoura.jpg" alt="Bolo de Cenoura com Chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy">
-            <div class="absolute top-3 left-3 bg-[#1E5631]/90 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1.5 tracking-wide z-10">
-              <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
-              <span>Zero Açúcar • Glúten • Lactose</span>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3.5 sm:p-4 pt-10 text-left">
-              <span class="inline-block text-[10px] sm:text-[11px] font-bold text-amber-300 uppercase tracking-wider mb-0.5">
-                Cobertura Irresistível
-              </span>
-              <h3 class="text-white font-extrabold text-sm sm:text-base leading-tight drop-shadow-sm">
-                Bolo de Cenoura com Chocolate
-              </h3>
-            </div>
+        <div class="recipes-card relative flex-shrink-0 w-[280px] h-[370px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[20px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-stone-200/90 bg-stone-900 select-none" aria-hidden="true">
+          <img src="images/receitas/bolo-cenoura.jpg" alt="Bolo de Cenoura com Chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+          <div class="absolute top-3.5 left-3.5 bg-[#1E5631]/85 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide z-10">
+            <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
+            <span>Zero Açúcar • Glúten • Lactose</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-6 pt-16 text-left pointer-events-none">
+            <h3 class="text-white font-bold text-lg sm:text-[20px] leading-snug drop-shadow-md">
+              Bolo de Cenoura com Chocolate
+            </h3>
           </div>
         </div>
 
         <!-- Card 5 Duplicate -->
-        <div class="recipes-card relative flex-shrink-0 w-[240px] sm:w-[270px] md:w-[300px] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-stone-200/80 bg-white" aria-hidden="true">
-          <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-            <img src="images/receitas/pao-iogurte.jpg" alt="Pão de Iogurte Super Macio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy">
-            <div class="absolute top-3 left-3 bg-[#1E5631]/90 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1.5 tracking-wide z-10">
-              <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
-              <span>Zero Açúcar • Glúten • Lactose</span>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3.5 sm:p-4 pt-10 text-left">
-              <span class="inline-block text-[10px] sm:text-[11px] font-bold text-amber-300 uppercase tracking-wider mb-0.5">
-                Cresce e Fica Fofinho
-              </span>
-              <h3 class="text-white font-extrabold text-sm sm:text-base leading-tight drop-shadow-sm">
-                Pão de Iogurte Super Macio
-              </h3>
-            </div>
+        <div class="recipes-card relative flex-shrink-0 w-[280px] h-[370px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[20px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-stone-200/90 bg-stone-900 select-none" aria-hidden="true">
+          <img src="images/receitas/pao-iogurte.jpg" alt="Pão de Iogurte Super Macio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+          <div class="absolute top-3.5 left-3.5 bg-[#1E5631]/85 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide z-10">
+            <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
+            <span>Zero Açúcar • Glúten • Lactose</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-6 pt-16 text-left pointer-events-none">
+            <h3 class="text-white font-bold text-lg sm:text-[20px] leading-snug drop-shadow-md">
+              Pão de Iogurte Super Macio
+            </h3>
           </div>
         </div>
 
         <!-- Card 6 Duplicate -->
-        <div class="recipes-card relative flex-shrink-0 w-[240px] sm:w-[270px] md:w-[300px] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-stone-200/80 bg-white" aria-hidden="true">
-          <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-            <img src="images/receitas/torta-maracuja.jpg" alt="Torta Cremosa de Maracujá e Chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy">
-            <div class="absolute top-3 left-3 bg-[#1E5631]/90 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1.5 tracking-wide z-10">
-              <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
-              <span>Zero Açúcar • Glúten • Lactose</span>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3.5 sm:p-4 pt-10 text-left">
-              <span class="inline-block text-[10px] sm:text-[11px] font-bold text-amber-300 uppercase tracking-wider mb-0.5">
-                Sobremesa dos Deuses
-              </span>
-              <h3 class="text-white font-extrabold text-sm sm:text-base leading-tight drop-shadow-sm">
-                Torta Cremosa de Maracujá e Chocolate
-              </h3>
-            </div>
+        <div class="recipes-card relative flex-shrink-0 w-[280px] h-[370px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[20px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-stone-200/90 bg-stone-900 select-none" aria-hidden="true">
+          <img src="images/receitas/torta-maracuja.jpg" alt="Torta Cremosa de Maracujá e Chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+          <div class="absolute top-3.5 left-3.5 bg-[#1E5631]/85 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide z-10">
+            <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
+            <span>Zero Açúcar • Glúten • Lactose</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-6 pt-16 text-left pointer-events-none">
+            <h3 class="text-white font-bold text-lg sm:text-[20px] leading-snug drop-shadow-md">
+              Torta Cremosa de Maracujá e Chocolate
+            </h3>
           </div>
         </div>
 
         <!-- Card 7 Duplicate -->
-        <div class="recipes-card relative flex-shrink-0 w-[240px] sm:w-[270px] md:w-[300px] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-stone-200/80 bg-white" aria-hidden="true">
-          <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-            <img src="images/receitas/torta-chocolate.jpg" alt="Torta Holandesa Sem Glúten" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy">
-            <div class="absolute top-3 left-3 bg-[#1E5631]/90 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1.5 tracking-wide z-10">
-              <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
-              <span>Zero Açúcar • Glúten • Lactose</span>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3.5 sm:p-4 pt-10 text-left">
-              <span class="inline-block text-[10px] sm:text-[11px] font-bold text-amber-300 uppercase tracking-wider mb-0.5">
-                Zero Açúcar
-              </span>
-              <h3 class="text-white font-extrabold text-sm sm:text-base leading-tight drop-shadow-sm">
-                Torta Holandesa Sem Glúten
-              </h3>
-            </div>
+        <div class="recipes-card relative flex-shrink-0 w-[280px] h-[370px] sm:w-[320px] sm:h-[420px] md:w-[360px] md:h-[460px] rounded-[20px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-stone-200/90 bg-stone-900 select-none" aria-hidden="true">
+          <img src="images/receitas/torta-chocolate.jpg" alt="Torta Holandesa Sem Glúten" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+          <div class="absolute top-3.5 left-3.5 bg-[#1E5631]/85 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide z-10">
+            <i class="fa-solid fa-seedling text-emerald-300 text-[10px]"></i>
+            <span>Zero Açúcar • Glúten • Lactose</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-6 pt-16 text-left pointer-events-none">
+            <h3 class="text-white font-bold text-lg sm:text-[20px] leading-snug drop-shadow-md">
+              Torta Holandesa Sem Glúten
+            </h3>
           </div>
         </div>
 
@@ -1776,7 +1706,7 @@
         const halfCount = Math.floor(cards.length / 2);
         let width = 0;
         const style = window.getComputedStyle(track);
-        const gap = parseFloat(style.gap) || 20;
+        const gap = parseFloat(style.gap) || 24;
         for (let i = 0; i < halfCount; i++) {
           width += cards[i].offsetWidth + gap;
         }
